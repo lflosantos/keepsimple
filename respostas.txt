@@ -1,0 +1,113 @@
+--- Questão 1:
+
+private static boolean isOn () {
+	return !isOff();
+}
+
+
+--- Questão 2:
+
+private void processarItens(List<Item> itens) {
+	
+	for (Item i : itens) {
+		try {
+			processar(i);
+		} catch (ItemException e) {
+			System.out.println("Erro ao processar o item: " + i.toString());
+		}
+	}
+	
+}
+
+private void processar(Item i) throws ItemException {
+	//implementação do processamento omitido
+	...
+	
+
+}
+
+
+--- Questão 3:
+
+1- fazer PULL do TRUNK
+2- Criar branch a partir do TRUNK: fix/TICKET , onde TICKET é o número do chamado
+3- Fazer a correção na BRANCH fix/TICKET
+4- Fazer COMMITT e PUSH da branch fix/TICKET
+5- Fazer MERGE do TRUNK na branch fix/TICKET
+6- Fazer COMMITT e PUSH da branch fix/TICKET
+7- Criar TAG a partir da branch fix/TICKET
+8- Implantar a TAG criada
+9- Colocar o código da TAG no TRUNK
+
+
+--- Questão 4:
+
+SELECT P.NOME, S.SALARIO
+FROM SALARIO AS S
+INNER JOIN PESSOA AS P ON P.ID_PESSOA = S.ID_PESSOA
+WHERE P.CPF = '123.123.123-12'
+AND S.DATA_INICIO_VIGENCIA  <= TO_DATE('01/06/2018', 'DD/MM/YYYY')
+AND NVL(S.DATA_FIM_VIGENCIA,TO_DATE('31/12/2999', 'DD/MM/YYYY')) > TO_DATE('01/06/2018', 'DD/MM/YYYY');
+
+
+--- Questão 5:
+
+SELECT P.NOME, P.SALARIO+SUM(B.VALOR_BENEFICIO)
+FROM BENEFICIO AS B
+INNER JOIN PESSOA AS P ON P.CD_PESSOA = B.CD_PESSOA
+--WHERE P.NOME = 'Luis Felipe'
+GROUP BY P.NOME, P.SALARIO;
+
+
+--- Questão 6:
+
+Alternate Key , é uma única coluna ou um conjunto de colunas da tabela que podem identificar uma linha de forma única desde que a coluna não seja uma Primary Key nem uma Foreign Key.
+A vantagem da Alternate Key é ter colunas que não são a Primary Key para identificar de forma única um registro da tabela.
+
+
+--- Questão 7:
+
+O angular JS utiliza a linguagem JavaScript, já o Angular utiliza o TypeScript.
+
+
+--- Questão 8:
+
+O Maven é responsável por fazer o BUILD do código e quando utilizada a sua estrutura, facilita algumas configurações como o diretório de fontes, os recursos e onde será gerado os
+binários. Além disso em projetos com mais de um módulo ao fazer o BUILD do módulo pai é propagado para os filhos. O Mavem também gerencia as dependências do projeto.
+
+
+--- Questão 9:
+
+GET: solicita a representação de um recurso específico. Requisições utilizando o método GET devem retornar apenas dados.
+HEAD: solicita uma resposta de forma idêntica ao método GET, porém sem conter o BODY.
+POST: é utilizado para submeter uma entidade a um recurso específico, frequentemente causando uma mudança no estado do recurso ou efeitos colaterais no servidor.
+PUT: substitui todas as atuais representações do recurso de destino pela carga de dados da requisição.
+DELETE: remove um recurso específico.
+CONNECT: estabelece um túnel para o servidor identificado pelo recurso de destino.
+OPTIONS: é usado para descrever as opções de comunicação com o recurso de destino.
+TRACE: executa um teste de chamada loop-back junto com o caminho para o recurso de destino.
+PATCH: é utilizado para aplicar modificações parciais em um recurso.
+
+
+--- Questão 10:
+
+Nunca utilizei o Spring Batch. Mas dando uma estudada rápida entendi que:
+- JOB: é o que será efetivamente executado pelo sistema.
+- STEP: é uma fase específica de um JOB, sendo que todo JOB tem pelo menos um STEP.
+
+
+--- Questão 11:
+
+Javascript / JQuery: 8
+Ajax / REST: 9
+Agular 2: 8
+Maven : 10
+SVN : 10
+Git : 10
+WebSphere : 4
+SpringBoot : 6
+Spring MVC: 6
+Spring Batch: 4
+Spring Data: 4
+Jenkins: 7
+Enterprise Architect: 3
